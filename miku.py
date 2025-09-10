@@ -1,16 +1,20 @@
+import os
+from dotenv import load_dotenv
 import discord
 from discord import app_commands  
 from discord.ext import commands 
 import asyncio
 import threading
-
-MIKU TOKEN = ''
+load_dotenv()
+MIKUTOKEN = os.getenv("MIKUTOKEN")
 
 intents = discord.Intents.default()  # 使用默認的 intents
 intents.messages = True  # 許可機器人讀取訊息
 intents.message_content = True
 intents.guilds = True
 intents.members = True
+CHANNEL_ID = 1347197528264675348 
+GUILD_ID = 1346245323789438988
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.tree.command(name="del", description=".")
@@ -45,4 +49,4 @@ async def on_ready():
     synced = await bot.tree.sync(guild=guild)
     print(f"已同步 {len(synced)} 個指令到伺服器 {GUILD_ID}")
 
-bot.run(TOKEN)  
+bot.run(MIKUTOKEN)  
