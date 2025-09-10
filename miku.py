@@ -1,10 +1,13 @@
+import os
+from dotenv import load_dotenv
 import discord
 from discord import app_commands  
 from discord.ext import commands 
 import asyncio
 import threading
-load_dotenv()
-MIKUTOKEN = ""
+load_dotenv() 
+
+MIKUTOKEN = os.getenv("MIKUTOKEN")
 
 intents = discord.Intents.default()  # 使用默認的 intents
 intents.messages = True  # 許可機器人讀取訊息
