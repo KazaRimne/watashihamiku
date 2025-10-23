@@ -14,8 +14,7 @@ intents.messages = True  # 許可機器人讀取訊息
 intents.message_content = True
 intents.guilds = True
 intents.members = True
-CHANNEL_ID = 1347197528264675348 
-GUILD_ID = 1346245323789438988
+CHANNEL_ID = your admin channel
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.tree.command(name="del", description=".")
