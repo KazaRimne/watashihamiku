@@ -58,7 +58,7 @@ async def delmsg(interaction: discord.Interaction, text: str):
 @delmsg.error
 async def delmsg_error(interaction: discord.Interaction, error):
     if isinstance(error, app_commands.MissingPermissions):
-        await interaction.response.send_message(f"需要管理者權限使用這個指令。", ephemeral=True)
+        await interaction.response.send_message(f"你沒有管理者權限。", ephemeral=True)
 
 
         
@@ -104,7 +104,7 @@ async def delmsg(interaction: discord.Interaction, text: str):
 @delmsg.error
 async def delmsg_error(interaction: discord.Interaction, error):
     if isinstance(error, app_commands.MissingPermissions):
-        await interaction.response.send_message(f"需要管理者權限使用這個指令。", ephemeral=True)
+        await interaction.response.send_message(f"你沒有管理者權限。", ephemeral=True)
 
 
 
